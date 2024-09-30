@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>header</title>
+    <link rel="stylesheet" href="../css/css.headerstyle.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="shortcut icon" href="../img/logo html.png" type="image/x-icon" />
+    <script
+      src="https://kit.fontawesome.com/your_kit_id.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <!-- this is header -->
+    <header id="main-header">
+      <div class="container">
+        <div class="logo">
+          <img src="../img/logo html.png" alt="logo" id="logo-nav" />
+        </div>
+        <div class="link-nav">
+          <ul>
+            <li>
+              <a href="" class="nav-item">
+                <i class="fas fa-house" style="color: #ffffff"></i> Home
+              </a>
+            </li>
+            <li>
+              <a href="" class="nav-item">
+                <i class="fas fa-info-circle"></i> About
+              </a>
+            </li>
+            <li>
+              <a href="" class="dropdown" onclick="toggleDropdown(event)">
+                <i class="fas fa-envelope"></i> Contact
+              </a>
+              <!-- Dropdown content -->
+              <div class="dropdown-content" id="contactDropdown">
+                <a href="mailto:someone@example.com">
+                  <i class="fa-solid fa-envelope" style="color: #000000"></i>
+                  Email Us
+                </a>
+                <a href="tel:+1234567890">
+                  <i class="fa-solid fa-phone" style="color: #000000"></i> Call
+                  Us
+                </a>
+                <a href="#"> <i class="fas fa-map-marker-alt"></i> Visit Us </a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <!-- end header -->
+
+    <!-- main content -->
+    <div class="hero">
+      <img src="../img/Wallpaper JKT 48.png" id="banner" alt="banner" />
+    </div>
+
+    <!-- Wave effect -->
+    <div class="wave-container">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path
+          fill="#5F6774"
+          fill-opacity="1"
+          d="M0,288L48,272C96,256,192,224,288,202.7C384,181,480,171,576,186.7C672,203,768,245,864,240C960,235,1056,181,1152,149.3C1248,117,1344,107,1392,101.3L1440,96V320H0Z"
+        ></path>
+      </svg>
+    </div>
+
+    <div class="content">
+      <h1>Sinau HTML, CSS & JS FrontEnd</h1>
+      <h4>Sinau apa bae?</h4>
+      <p>
+        Layouting, coloring dll,
+        <br>
+        js nggo tambah pantes
+      </p>
+    </div>
+
+    <footer>
+      <div class="footer">
+        <div class="info">
+          <div class="john-doe">
+            <div class="img">
+              <img src="../img/john doe.jpg" id="john-doe" alt="john doe" />
+            </div>
+            <div class="bio">
+              <h3 id="title-name">John Doe</h3>
+              <p id="description">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Omnis,
+                nobis.
+              </p>
+            </div>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>No</th>
+                <th>Hari</th>
+                <th>Tanggel</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>Senin</td>
+                <td>30 September 2024</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="copy">Copyright &copy; 2024</div>
+      </div>
+    </footer>
+
+    <script>
+      window.onscroll = function () {
+        const header = document.getElementById("main-header");
+
+        if (window.scrollY > 50) {
+          header.style.backgroundColor = "transparent"; // Changes to solid background after scroll
+        } else {
+          header.style.backgroundColor = "#070926"; // Stays transparent when at the top
+        }
+      };
+    </script>
+    <script>
+      // Buka dropdown nk kursor ng target(contact)
+      function toggleDropdown(event) {
+        event.preventDefault();
+        var dropdown = document.getElementById("contactDropdown");
+        dropdown.classList.toggle("show");
+      }
+
+      // Nutup dropdown nk kursor ora ng target
+      window.onclick = function (event) {
+        if (
+          !event.target.matches(".fas.fa-envelope") &&
+          !event.target.matches(".dropdown-content a") &&
+          !event.target.closest("li")
+        ) {
+          var dropdown = document.getElementById("contactDropdown");
+          if (dropdown.classList.contains("show")) {
+            dropdown.classList.remove("show");
+          }
+        }
+      };
+    </script>
+  </body>
+</html>
